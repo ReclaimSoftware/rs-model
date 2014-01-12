@@ -1,5 +1,6 @@
 **Yet another model framework**
 
+[![Build Status](https://secure.travis-ci.org/ReclaimSoftware/rs-model.png)](http://travis-ci.org/ReclaimSoftware/rs-model)
 
 ### RSModel <big><big>&cap;</big></big> Backbone.Model
 
