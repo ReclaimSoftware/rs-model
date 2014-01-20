@@ -113,7 +113,16 @@ describe "RSModel", () ->
 
 
   describe "toJSON", () ->
-    xit "returns a shallow copy of attributes", () ->
+    it "returns a shallow copy of attributes", () ->
+      for m in models
+        m.set {x: 1, y: []}
+        copy = m.toJSON()
+        assert.equal JSON.stringify(copy), JSON.stringify(m.attributes)
+        assert.equal copy.x, 1
+        m.set {x: 2}
+        assert.equal copy.x, 1
+        m.attributes.y.push 'x'
+        assert.equal JSON.stringify(copy.y), '["x"]'
 
 
   describe "{keys,values,pairs,invert,pick,omit}", () ->

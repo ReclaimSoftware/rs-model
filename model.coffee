@@ -23,6 +23,12 @@ class RSModel
     if key == 'id'
       @id = value
 
+  toJSON: () ->
+    copy = {}
+    for k, v of @attributes
+      copy[k] = v
+    copy
+
   @get_plural: () -> @plural or= @get_singular() + 's'
   @get_singular: () -> @singular or= camel_to_snake @name
   get_plural: () -> @constructor.get_plural()
