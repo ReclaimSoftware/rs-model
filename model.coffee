@@ -1,3 +1,5 @@
+{camel_to_snake} = require 'rs-util'
+
 class RSModel
 
   @generate_id: () ->
@@ -20,6 +22,11 @@ class RSModel
     @attributes[key] = value
     if key == 'id'
       @id = value
+
+  @get_plural: () -> @plural or= @get_singular() + 's'
+  @get_singular: () -> @singular or= camel_to_snake @name
+  get_plural: () -> @constructor.get_plural()
+  get_singular: () -> @constructor.get_singular()
 
 
 module.exports = {RSModel}
