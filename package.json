@@ -5,6 +5,7 @@
   "dependencies": {
     "async": "0.2.9",
     "coffee-script": "1.6.3",
+    "rs-util": "git+https://github.com/ReclaimSoftware/rs-util",
     "underscore": "1.5.2"
   },
   "devDependencies": {
