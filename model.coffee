@@ -75,6 +75,8 @@ class RSModel
       copy[k] = v
     copy
 
+  path: () -> "/#{@get_plural()}/#{@id}"
+
   @get_plural: () -> @plural or @get_singular() + 's'
   @get_singular: () -> @singular or camel_to_snake @name
   get_plural: () -> @constructor.get_plural()

@@ -38,6 +38,11 @@ TODO:
     [singular + "_revs", id, rev_id]    -> JSON
 
 
+### Misc
+
+`model.path()` &rarr; `"/#{plural}/#{id}"`
+
+
 ### Model.init
 
     Model.init(app)           # checks app.dir/models/*, sets the following
