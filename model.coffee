@@ -6,6 +6,8 @@ class RSModel
 
   @init: (@app) ->
     return if @classes
+    @db = @app.db
+    @storage = @app.storage
     @classes = {}
     @classes_by_plural = {}
     models_dir = "#{@app.dir}/models"
